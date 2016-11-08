@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Find Your Pub</string>
+    <string-array name="cities">
+        <item>Coventry</item>
+        <item>London</item>
+        <item>Manchester</item>
+        <item>Liverpool</item>
+        <item>Bath</item>
+        <item>Newcastle</item>
+        <item>Oxford</item>
+        <item>Hull</item>
+        <item>Cambridge</item>
+    </string-array>
+    <string-array name="pub_name_coventry">
+        <item>Phoenix</item>
+        <item>Quid's inn</item>
+        <item>Castle Ground</item>
+        <item>Ivy House</item>
+        <item>The Establishment</item>
+        <item>Las Iguanas</item>
+    </string-array>
+</resources>
