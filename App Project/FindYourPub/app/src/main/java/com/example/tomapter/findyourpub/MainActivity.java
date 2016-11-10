@@ -1,7 +1,9 @@
 package com.example.tomapter.findyourpub;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -21,5 +23,15 @@ public class MainActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
+    }
+
+    public void onClick(View v){
+        switch (v.getId()){
+            case R.id.find_me:
+                break;
+            case R.id.go:
+                startActivity(new Intent(this, PubListActivity.class));
+                break;
+        }
     }
 }
