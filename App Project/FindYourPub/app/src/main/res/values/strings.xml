@@ -19,4 +19,5 @@
         <item>The Establishment</item>
         <item>Las Iguanas</item>
     </string-array>
+    <string name="title_activity_find_me">Map</string>
 </resources>

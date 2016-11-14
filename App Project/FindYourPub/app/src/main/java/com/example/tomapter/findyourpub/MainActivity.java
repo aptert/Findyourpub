@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_find_me);
 
         Spinner spinner = (Spinner) findViewById(R.id.cities);
 // Create an ArrayAdapter using the string array and a default spinner layout
