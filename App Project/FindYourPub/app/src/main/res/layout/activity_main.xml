@@ -13,6 +13,7 @@
     android:gravity="center"
     tools:context="com.example.tomapter.findyourpub.MainActivity"
     android:weightSum="1">
+    <!--android:background="@color/colorBackground"-->
 
     <TextView
         android:layout_width="match_parent"
@@ -38,14 +39,12 @@
         android:id="@+id/topbar"
         android:textSize="50sp"
         android:layout_marginBottom="117dp"/>
-
-    <Spinner
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/cities"
-        android:layout_marginBottom="50dp"/>
-        <!--android:popupBackground="#FFB765"-->
-
+        android:hint="Your current location here"
+        android:textSize="20sp"
+        android:gravity="center"/>
 
 
     <Button
