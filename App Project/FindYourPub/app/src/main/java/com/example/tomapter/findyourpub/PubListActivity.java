@@ -15,7 +15,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
-import com.example.tomapter.findyourpub.dummy.DummyContent;
+import com.example.tomapter.findyourpub.content.PubContent;
+//import com.example.tomapter.findyourpub.dummy.PubContent;
 
 import java.util.List;
 
@@ -69,16 +70,16 @@ public class PubListActivity extends AppCompatActivity {
     }
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
-        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(DummyContent.ITEMS));
+        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(PubContent.ITEMS));
     }
 
     public class SimpleItemRecyclerViewAdapter
             extends RecyclerView.Adapter<SimpleItemRecyclerViewAdapter.ViewHolder> {
 
 
-        private final List<DummyContent.DummyItem> mValues;
+        private final List<PubContent.PubItem> mValues;
 
-        public SimpleItemRecyclerViewAdapter(List<DummyContent.DummyItem> items) {
+        public SimpleItemRecyclerViewAdapter(List<PubContent.PubItem> items) {
             mValues = items;
         }
 
@@ -93,7 +94,7 @@ public class PubListActivity extends AppCompatActivity {
         public void onBindViewHolder(final ViewHolder holder, int position) {
             holder.mItem = mValues.get(position);
             holder.mIdView.setText(mValues.get(position).id);
-            holder.mContentView.setText(mValues.get(position).content);
+            holder.mContentView.setText(mValues.get(position).name);
 
             holder.mView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -126,7 +127,7 @@ public class PubListActivity extends AppCompatActivity {
             public final View mView;
             public final TextView mIdView;
             public final TextView mContentView;
-            public DummyContent.DummyItem mItem;
+            public PubContent.PubItem mItem;
 
             public ViewHolder(View view) {
                 super(view);

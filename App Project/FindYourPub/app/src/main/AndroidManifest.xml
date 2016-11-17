@@ -22,7 +22,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PubDetailsActivity" />
         <activity
             android:name=".PubListActivity"
             android:label="@string/title_pub_list"
