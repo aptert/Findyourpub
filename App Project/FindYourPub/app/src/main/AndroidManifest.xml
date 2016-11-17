@@ -23,7 +23,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".PubDetailsActivity" />
-        <activity android:name=".PubListActivity" />
+        <activity
+            android:name=".PubListActivity"
+            android:label="@string/title_pub_list"
+            android:theme="@style/FindYourPubTheme" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -39,6 +42,15 @@
         <activity
             android:name=".FindPubActivity"
             android:label="@string/title_activity_find_me" />
+        <activity
+            android:name=".PubDetailActivity"
+            android:label="@string/title_pub_detail"
+            android:parentActivityName=".PubListActivity"
+            android:theme="@style/FindYourPubTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.tomapter.findyourpub.PubListActivity" />
+        </activity>
     </application>
 
 </manifest>
