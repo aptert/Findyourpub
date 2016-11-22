@@ -3,4 +3,6 @@
     <color name="accent_material_dark">#9ce6b7</color>
     <color name="foreground_material_dark">#000000</color>
     <color name="primary_text_default_material_dark">#000000</color>
+    <color name="primary_material_dark">#ffc783</color>
+    <color name="primary_dark_material_dark">#b84f4f</color>
 </resources>

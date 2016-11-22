@@ -9,11 +9,18 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:orientation="vertical"
-    android:paddingTop="@dimen/activity_vertical_margin"
     android:gravity="center"
     tools:context="com.example.tomapter.findyourpub.MainActivity"
     android:weightSum="1">
     <!--android:background="@color/colorBackground"-->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login/Register"
+        android:textStyle="italic"
+        android:id="@+id/loginLink"
+        android:gravity="right"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -39,8 +46,11 @@
         android:id="@+id/topbar"
         android:textSize="50sp"
         android:layout_marginBottom="117dp"/>
+
+
     <TextView
         android:layout_width="match_parent"
+        android:id="@+id/fieldCity"
         android:layout_height="wrap_content"
         android:hint="Your current location here"
         android:textSize="20sp"
@@ -51,15 +61,16 @@
         android:text="Find Me"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/find_me"
-        android:onClick="onClick"/>
+        android:id="@+id/find_me"/>
+
 
     <Button
         android:text="Find My Pub"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/go"
-        android:onClick="onClick"/>
+        android:onClick="onClick"
+        android:enabled="false"/>
 
 
 </LinearLayout>

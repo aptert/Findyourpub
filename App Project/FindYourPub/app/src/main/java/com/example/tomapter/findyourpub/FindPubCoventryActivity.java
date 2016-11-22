@@ -18,13 +18,19 @@ package com.example.tomapter.findyourpub;
  */
 
 
+import com.google.android.gms.maps.CameraUpdate;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnMyLocationButtonClickListener;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.location.LocationListener;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -38,7 +44,7 @@ import android.widget.Toast;
  * Permission for {@link android.Manifest.permission#ACCESS_FINE_LOCATION} is requested at run
  * time. If the permission has not been granted, the Activity is finished with an error message.
  */
-public class FindPubActivity extends AppCompatActivity implements
+public class FindPubCoventryActivity extends AppCompatActivity implements
         OnMyLocationButtonClickListener,
         OnMapReadyCallback,
         ActivityCompat.OnRequestPermissionsResultCallback {
@@ -73,10 +79,31 @@ public class FindPubActivity extends AppCompatActivity implements
     @Override
     public void onMapReady(GoogleMap map) {
         mMap = map;
+        MarkerOptions phoenix = new MarkerOptions().position(new LatLng(52.406578,-1.504017));
+        phoenix.title("Phoenix").snippet("122 Gosford St, Coventry CV1 5DL, UK");
+        MarkerOptions quidsinn = new MarkerOptions().position(new LatLng(52.406594,-1.503214));
+        quidsinn.title("Quid's Inn").snippet("117 Gosford St, Coventry CV1 5DL, UK");
+        MarkerOptions castleGround = new MarkerOptions().position(new LatLng(52.406594,-1.503214));
+        castleGround.title("Castle Ground").snippet("7 Little Park St, Coventry CV1 2UR, UK");
+        MarkerOptions establishment = new MarkerOptions().position(new LatLng(52.407773,-1.507803));
+        establishment.title("Establishment").snippet("The Old County Hall Bayley Lane, Coventry CV1 5RN, UK");
+        MarkerOptions lasIguanas = new MarkerOptions().position(new LatLng(52.407818,-1.510293));
+        lasIguanas.title("Las Iguanas").snippet("SU4, Cathedral Lanes Shopping Centre, Broadgate, Coventry CV1 1LL, UK");
+        MarkerOptions ivyHouse = new MarkerOptions().position(new LatLng(52.406787,-1.504506));
+        ivyHouse.title("Ivy House").snippet("44 Jordans close, Coventry CV1 5RW, UK");
+
+        mMap.addMarker(phoenix);
+        mMap.addMarker(quidsinn);
+        mMap.addMarker(castleGround);
+        mMap.addMarker(establishment);
+        mMap.addMarker(lasIguanas);
+        mMap.addMarker(ivyHouse);
 
         mMap.setOnMyLocationButtonClickListener(this);
         enableMyLocation();
     }
+
+
 
     /**
      * Enables the My Location layer if the fine location permission has been granted.
@@ -95,7 +122,7 @@ public class FindPubActivity extends AppCompatActivity implements
 
     @Override
     public boolean onMyLocationButtonClick() {
-        Toast.makeText(this, "MyLocation button clicked", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "MyLocation button clicked", Toast.LENGTH_SHORT).show();
         // Return false so that we don't consume the event and the default behavior still occurs
         // (the camera animates to the user's current position).
         return false;

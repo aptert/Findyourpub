@@ -4,12 +4,14 @@ import android.app.Activity;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.graphics.drawable.DrawableWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.tomapter.findyourpub.content.PubContent;
+import com.example.tomapter.findyourpub.content.PubCoventryContent;
 
 /**
  * A fragment representing a single Pub detail screen.
@@ -27,7 +29,7 @@ public class PubDetailFragment extends Fragment {
     /**
      * The dummy content this fragment is presenting.
      */
-    private PubContent.PubItem mItem;
+    private PubCoventryContent.PubItem mItem;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -44,7 +46,7 @@ public class PubDetailFragment extends Fragment {
             // Load the dummy content specified by the fragment
             // arguments. In a real-world scenario, use a Loader
             // to load content from a content provider.
-            mItem = PubContent.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
+            mItem = PubCoventryContent.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
 
             Activity activity = this.getActivity();
             CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) activity.findViewById(R.id.toolbar_layout);
@@ -64,6 +66,7 @@ public class PubDetailFragment extends Fragment {
             ((TextView) rootView.findViewById(R.id.tel)).setText(mItem.tel);
             ((TextView) rootView.findViewById(R.id.address)).setText(mItem.address);
             ((TextView) rootView.findViewById(R.id.name)).setText(mItem.name);
+            ((ImageView) rootView.findViewById(R.id.logo)).setImageResource(mItem.logo);
         }
 
         return rootView;
