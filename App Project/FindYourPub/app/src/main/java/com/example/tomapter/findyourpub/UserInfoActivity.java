@@ -13,6 +13,8 @@ public class UserInfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_user_info);
 
         final TextView tvWelcome = (TextView) findViewById(R.id.tvWelcome);
-        final TextView tvUserName = (TextView) findViewById(R.id.tvUserName);
+
+        tvWelcome.setText(" ");
+        tvWelcome.append("Welcome " + getIntent().getStringExtra("name"));
     }
 }

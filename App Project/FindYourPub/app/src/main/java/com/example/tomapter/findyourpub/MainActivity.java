@@ -27,6 +27,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.tomapter.findyourpub.content.PubContent;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.identity.intents.Address;
 import com.google.android.gms.location.LocationServices;
@@ -46,8 +47,9 @@ public class MainActivity extends AppCompatActivity {
     private Button go;
     private double lat;
     private double lon;
+    private static String city;
     private RequestQueue requestQueue;
-
+static public int xx;
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +76,9 @@ public class MainActivity extends AppCompatActivity {
                 textview.append("lat: " + location.getLatitude() + " long: " + location.getLongitude());*/
                 lon = location.getLongitude();
                 lat = location.getLatitude();
+                Intent intent = new Intent(getBaseContext(), DirectionActivity.class);
+                intent.putExtra("lat", lat);
+                intent.putExtra("lon", lon);
             }
 
             @Override
@@ -138,11 +143,10 @@ public class MainActivity extends AppCompatActivity {
                             Log.d("request", "request got a response!");
 
                             String address = null;
-                            String city = null;
                             try {
                                 address = response.getJSONArray("results").getJSONObject(2).getString("formatted_address");
                                 city = response.getJSONArray("results").getJSONObject(2).getJSONArray("address_components").getJSONObject(1).getString("long_name");
-                                Intent intent = new Intent(getBaseContext(),PubListActivity.class);
+                                Intent intent = new Intent(getBaseContext(),PubContent.class);
                                 intent.putExtra("city", city);
                                 textview.setText(" ");
                                 textview.setText("You are in " + address);
@@ -180,6 +184,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, PubListActivity.class));
                 break;
         }
+    }
+
+    public static String getCity() {
+        return city;
     }
 
     /*@Override

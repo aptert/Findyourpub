@@ -15,9 +15,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
-import com.example.tomapter.findyourpub.content.PubCoventryContent;
-import com.example.tomapter.findyourpub.content.PubLondonContent;
-//import com.example.tomapter.findyourpub.dummy.PubCoventryContent;
+import com.example.tomapter.findyourpub.content.PubContent;
 
 import java.util.List;
 
@@ -74,23 +72,23 @@ public class PubListActivity extends AppCompatActivity {
     }
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
-
-       // switch (getIntent().getStringExtra("city")){
-         //   case ("Coventry"):
-                recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(PubCoventryContent.ITEMS));
-           //     break;
+        
+        // switch (getIntent().getStringExtra("city")){
+            //case ("Coventry"):
+                recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(PubContent.ITEMS));
+               //break;
             /*case ("London"):
                 recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(PubLondonContent.ITEMS));
                 break;*/
-        //}
+       // }
     }
 
     public class SimpleItemRecyclerViewAdapter
             extends RecyclerView.Adapter<SimpleItemRecyclerViewAdapter.ViewHolder> {
 
-        private final List<PubCoventryContent.PubItem> mValues;
+        private final List<PubContent.PubItem> mValues;
 
-        public SimpleItemRecyclerViewAdapter(List<PubCoventryContent.PubItem> items) {
+        public SimpleItemRecyclerViewAdapter(List<PubContent.PubItem> items) {
             mValues = items;
         }
 
@@ -138,7 +136,7 @@ public class PubListActivity extends AppCompatActivity {
             public final View mView;
             public final TextView mIdView;
             public final TextView mContentView;
-            public PubCoventryContent.PubItem mItem;
+            public PubContent.PubItem mItem;
 
             public ViewHolder(View view) {
                 super(view);

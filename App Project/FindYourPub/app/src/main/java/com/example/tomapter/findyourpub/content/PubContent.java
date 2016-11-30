@@ -1,7 +1,10 @@
 package com.example.tomapter.findyourpub.content;
 
+import android.content.Intent;
 import android.widget.ImageView;
 
+import com.example.tomapter.findyourpub.MainActivity;
+import com.example.tomapter.findyourpub.PubListActivity;
 import com.example.tomapter.findyourpub.R;
 import com.google.android.gms.common.images.ImageManager;
 import com.google.android.gms.maps.model.LatLng;
@@ -17,7 +20,7 @@ import java.util.Map;
  * <p>
  * TODO: Replace all uses of this class before publishing your app.
  */
-public class PubCoventryContent {
+public class PubContent {
 
     /**
      * An array of sample (pub) items.
@@ -30,13 +33,24 @@ public class PubCoventryContent {
     public static final Map<String, PubItem> ITEM_MAP = new HashMap<String, PubItem>();
 
     private static final int COUNT = 25;
-
     static {
+
+        String city = MainActivity.getCity();
         // Add some sample items.
         addItem(new PubItem("1", "Phoenix","02476 520387", "122 Gosford Street, Coventry, CV1 5DL",R.drawable.phoenix_logo));
         addItem(new PubItem("2", "Quid\'s Inn","024 7622 9551", "118 gosford street, Coventry, CV1 5DL",R.drawable.quids_inn));
-        addItem(new PubItem("3", "Castle Ground","024 7663 0862", "7 Little Park St, Coventry CV1 2UR",R.drawable.las_iguanas));
+        addItem(new PubItem("3", "Castle Ground","024 7663 0862", "7 Little Park St, Coventry CV1 2UR",R.drawable.castle_ground));
         addItem(new PubItem("4", "Las Iguanas","02476 239 120", "SU4, Cathedral Lanes Shopping Centre, Broadgate, Coventry CV1 1LL, UK",R.drawable.las_iguanas));
+
+        switch(city){
+            case ("Coventry"):
+                addItem(new PubItem("1", "Phoenix","02476 520387", "122 Gosford Street, Coventry, CV1 5DL",R.drawable.phoenix_logo));
+                addItem(new PubItem("2", "Quid\'s Inn","024 7622 9551", "118 gosford street, Coventry, CV1 5DL",R.drawable.quids_inn));
+                break;
+            case ("London"):
+                addItem(new PubItem("1", "Ain't Nothin","02476 520387", "122 Gosford Street, Coventry, CV1 5DL",R.drawable.phoenix_logo));
+                break;
+        }
 
     }
 

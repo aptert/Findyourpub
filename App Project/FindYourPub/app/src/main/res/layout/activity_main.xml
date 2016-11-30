@@ -27,11 +27,11 @@
         android:layout_height="wrap_content"
         android:text="@string/app_name"
         android:gravity="center"
-        android:textSize="70sp"/>
+        android:textSize="30sp"/>
 
 
     <ImageView
-        android:layout_width="297dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:contentDescription="Biere"
         app:srcCompat="@drawable/beer_yellow"
@@ -44,8 +44,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/topbar"
-        android:textSize="50sp"
-        android:layout_marginBottom="117dp"/>
+        android:textSize="20sp"
+        android:layout_marginBottom="20dp"/>
 
 
     <TextView
@@ -70,7 +70,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/go"
         android:onClick="onClick"
-        android:enabled="false"/>
+        android:enabled="true"/>
 
 
 </LinearLayout>

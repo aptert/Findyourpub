@@ -18,21 +18,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/ic_account_box_black_24dp"
-        android:id="@+id/imageView2"
-        android:layout_toLeftOf="@+id/tvRegister" />
+        android:id="@+id/imageView2"/>
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:layout_alignParentTop="true"
         android:layout_marginTop="14dp"
         android:id="@+id/etUserName"
-        android:hint="Username"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:hint="Username" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -41,29 +35,18 @@
         android:ems="10"
         android:layout_below="@+id/etUserName"
         android:id="@+id/etPassword"
-        android:hint="Password"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:hint="Password" />
 
     <Button
         android:text="Login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/bLogin"
-        android:layout_below="@+id/etPassword"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:id="@+id/bLogin" />
 
     <TextView
         android:text="Register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/bLogin"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="33dp"
         android:id="@+id/tvRegister" />
 
