@@ -131,7 +131,7 @@ static public int xx;
             @Override
             public void onClick(View view) {
                 Log.d("Location", "requestLocationUpdates activated");
-                Log.d("lat lon", Double.toString(lat) + Double.toString(lon));
+                Log.d("lat lon", Double.toString(lat) +" "+ Double.toString(lon));
 
 
                 if(lat != 0.00 && lon != 0.00){

@@ -33,21 +33,21 @@ public class PubContent {
     public static final Map<String, PubItem> ITEM_MAP = new HashMap<String, PubItem>();
 
     private static final int COUNT = 25;
-    static {
+    static{
 
         String city = MainActivity.getCity();
         // Add some sample items.
-        addItem(new PubItem("1", "Phoenix","02476 520387", "122 Gosford Street, Coventry, CV1 5DL",R.drawable.phoenix_logo));
+       /* addItem(new PubItem("1", "Phoenix","02476 520387", "122 Gosford Street, Coventry, CV1 5DL",R.drawable.phoenix_logo));
         addItem(new PubItem("2", "Quid\'s Inn","024 7622 9551", "118 gosford street, Coventry, CV1 5DL",R.drawable.quids_inn));
         addItem(new PubItem("3", "Castle Ground","024 7663 0862", "7 Little Park St, Coventry CV1 2UR",R.drawable.castle_ground));
         addItem(new PubItem("4", "Las Iguanas","02476 239 120", "SU4, Cathedral Lanes Shopping Centre, Broadgate, Coventry CV1 1LL, UK",R.drawable.las_iguanas));
-
+*/
         switch(city){
             case ("Coventry"):
                 addItem(new PubItem("1", "Phoenix","02476 520387", "122 Gosford Street, Coventry, CV1 5DL",R.drawable.phoenix_logo));
                 addItem(new PubItem("2", "Quid\'s Inn","024 7622 9551", "118 gosford street, Coventry, CV1 5DL",R.drawable.quids_inn));
                 break;
-            case ("London"):
+            case ("Soho"):
                 addItem(new PubItem("1", "Ain't Nothin","02476 520387", "122 Gosford Street, Coventry, CV1 5DL",R.drawable.phoenix_logo));
                 break;
         }

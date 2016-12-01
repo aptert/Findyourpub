@@ -70,7 +70,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/go"
         android:onClick="onClick"
-        android:enabled="true"/>
+        android:enabled="false"/>
 
 
 </LinearLayout>
