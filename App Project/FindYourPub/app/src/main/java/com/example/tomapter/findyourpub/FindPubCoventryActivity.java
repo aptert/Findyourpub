@@ -91,16 +91,25 @@ public class FindPubCoventryActivity extends AppCompatActivity implements
         lasIguanas.title("Las Iguanas").snippet("SU4, Cathedral Lanes Shopping Centre, Broadgate, Coventry CV1 1LL, UK");
         MarkerOptions ivyHouse = new MarkerOptions().position(new LatLng(52.406787,-1.504506));
         ivyHouse.title("Ivy House").snippet("44 Jordans close, Coventry CV1 5RW, UK");
-
+        MarkerOptions aint_nothin = new MarkerOptions().position(new LatLng(51.512965, -0.139525));
+        aint_nothin.title("Ain't nothing but...").snippet("20 Kingly St, Carnaby, London W1B 5PZ");
         mMap.addMarker(phoenix);
         mMap.addMarker(quidsinn);
         mMap.addMarker(castleGround);
         mMap.addMarker(establishment);
         mMap.addMarker(lasIguanas);
         mMap.addMarker(ivyHouse);
+        mMap.addMarker(aint_nothin);
 
         mMap.setOnMyLocationButtonClickListener(this);
         enableMyLocation();
+        CameraUpdate center=
+                CameraUpdateFactory.newLatLng(new LatLng(40.76793169992044,
+                        -73.98180484771729));
+        CameraUpdate zoom=CameraUpdateFactory.zoomTo(15);
+
+        map.moveCamera(center);
+        map.animateCamera(zoom);
     }
 
 

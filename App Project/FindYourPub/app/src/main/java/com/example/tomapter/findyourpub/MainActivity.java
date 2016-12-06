@@ -144,8 +144,8 @@ static public int xx;
 
                             String address = null;
                             try {
-                                address = response.getJSONArray("results").getJSONObject(2).getString("formatted_address");
-                                city = response.getJSONArray("results").getJSONObject(2).getJSONArray("address_components").getJSONObject(1).getString("long_name");
+                                address = response.getJSONArray("results").getJSONObject(1).getString("formatted_address");
+                                city = response.getJSONArray("results").getJSONObject(1).getJSONArray("address_components").getJSONObject(2).getString("long_name");
                                 Intent intent = new Intent(getBaseContext(),PubContent.class);
                                 intent.putExtra("city", city);
                                 textview.setText(" ");
