@@ -13,8 +13,11 @@ public class UserInfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_user_info);
 
         final TextView tvWelcome = (TextView) findViewById(R.id.tvWelcome);
+        final TextView tvAge = (TextView) findViewById(R.id.tvAge);
 
         tvWelcome.setText(" ");
         tvWelcome.append("Welcome " + getIntent().getStringExtra("name"));
+        tvAge.setText(" ");
+        tvAge.append("You are " + getIntent().getStringExtra("age") + " so you are allowed to go to any pub you like");
     }
 }

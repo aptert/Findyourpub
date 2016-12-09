@@ -25,7 +25,6 @@
             android:layout_height="wrap_content"
             android:text="Login/Register"
             android:textStyle="italic"
-            android:layout_marginTop="@dimen/fab_margin"
             android:id="@+id/loginLink"
             android:gravity="end"/>
 
@@ -43,8 +42,6 @@
             android:layout_height="wrap_content"
             android:contentDescription="Biere"
             app:srcCompat="@drawable/beer_yellow"
-            android:layout_marginTop="50dp"
-            android:layout_marginBottom="50dp"
             android:id="@+id/imageView" />
 
 

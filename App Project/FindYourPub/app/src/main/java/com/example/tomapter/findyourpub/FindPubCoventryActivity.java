@@ -29,6 +29,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.LocationListener;
 import android.os.Bundle;
@@ -61,6 +62,8 @@ public class FindPubCoventryActivity extends AppCompatActivity implements
      * {@link #onRequestPermissionsResult(int, String[], int[])}.
      */
     private boolean mPermissionDenied = false;
+    private double lat;
+    private double lon;
 
     private GoogleMap mMap;
 
@@ -68,6 +71,14 @@ public class FindPubCoventryActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_pub);
+
+        //Getting de location back from the main activity
+        /*Bundle bundle = getIntent().getExtras();
+        lat = bundle.getDouble("lat");
+        lon = bundle.getDouble("lon");*/
+        lat = MainActivity.lat;
+        lon = MainActivity.lon; //try to change the way to do this
+
 
         SupportMapFragment mapFragment =
                 (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
@@ -79,6 +90,7 @@ public class FindPubCoventryActivity extends AppCompatActivity implements
     @Override
     public void onMapReady(GoogleMap map) {
         mMap = map;
+
         MarkerOptions phoenix = new MarkerOptions().position(new LatLng(52.406578,-1.504017));
         phoenix.title("Phoenix").snippet("122 Gosford St, Coventry CV1 5DL, UK");
         MarkerOptions quidsinn = new MarkerOptions().position(new LatLng(52.406594,-1.503214));
@@ -93,6 +105,14 @@ public class FindPubCoventryActivity extends AppCompatActivity implements
         ivyHouse.title("Ivy House").snippet("44 Jordans close, Coventry CV1 5RW, UK");
         MarkerOptions aint_nothin = new MarkerOptions().position(new LatLng(51.512965, -0.139525));
         aint_nothin.title("Ain't nothing but...").snippet("20 Kingly St, Carnaby, London W1B 5PZ");
+        MarkerOptions albany = new MarkerOptions().position(new LatLng(52.402970, -1.526782));
+        albany.title("The Albany").snippet("24 Albany Rd, Coventry CV5 6JU");
+        MarkerOptions boston = new MarkerOptions().position(new LatLng(51.514697, -0.131257));
+        boston.title("68 & Boston").snippet("5 Greek St, Soho, London W1D 4DD");
+        MarkerOptions apeandbird = new MarkerOptions().position(new LatLng(51.513383, -0.128761));
+        apeandbird.title("Ape & Bird").snippet("142 Shaftesbury Ave, Soho");
+        MarkerOptions termini = new MarkerOptions().position(new LatLng(51.513677, -0.129790));
+        termini.title("Bar Termini").snippet("7 Old Compton St, Soho");
         mMap.addMarker(phoenix);
         mMap.addMarker(quidsinn);
         mMap.addMarker(castleGround);
@@ -100,12 +120,17 @@ public class FindPubCoventryActivity extends AppCompatActivity implements
         mMap.addMarker(lasIguanas);
         mMap.addMarker(ivyHouse);
         mMap.addMarker(aint_nothin);
+        mMap.addMarker(albany);
+        mMap.addMarker(boston);
+        mMap.addMarker(apeandbird);
+        mMap.addMarker(termini);
+
 
         mMap.setOnMyLocationButtonClickListener(this);
         enableMyLocation();
         CameraUpdate center=
-                CameraUpdateFactory.newLatLng(new LatLng(40.76793169992044,
-                        -73.98180484771729));
+                CameraUpdateFactory.newLatLng(new LatLng(lat,
+                        lon));
         CameraUpdate zoom=CameraUpdateFactory.zoomTo(15);
 
         map.moveCamera(center);

@@ -35,6 +35,8 @@ public class PubListActivity extends AppCompatActivity {
      */
     private boolean mTwoPane;
     private String [] pubNames;
+    private double lat;
+    private double lon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,9 +52,16 @@ public class PubListActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*Snackbar.make(view, "Here will display a map with the pubs displayed", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();*/
+
+                //Getting de location back from the main activity then pass it again to the FindPubCoventryActivity
+                /*Bundle bundle = getIntent().getExtras();
+                lat = bundle.getDouble("lat");
+                lon = bundle.getDouble("lon");*/
                 Intent intent = new Intent(PubListActivity.this, FindPubCoventryActivity.class);
+                /*Bundle b = new Bundle();
+                b.putDouble("lat", lat);
+                b.putDouble("lon", lon);
+                intent.putExtras(b);*/
                 startActivity(intent);
 
             }

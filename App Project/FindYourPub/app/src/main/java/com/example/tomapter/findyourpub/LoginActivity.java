@@ -2,6 +2,7 @@ package com.example.tomapter.findyourpub;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.location.Location;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -40,10 +41,12 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(etUserName.getText().toString().equals(db.getUser(etUserName.getText().toString()).getUserName()) && etPassword.getText().toString().equals(db.getUser(etUserName.getText().toString()).getPassword())){
+                    Log.d("test", "click");
                     Intent intent = new Intent(getBaseContext(), UserInfoActivity.class);
                     intent.putExtra("name", db.getUser(etUserName.getText().toString()).getName());
                     intent.putExtra("userName", db.getUser(etUserName.getText().toString()).getUserName());
                     intent.putExtra("password", db.getUser(etUserName.getText().toString()).getPassword());
+                    intent.putExtra("age", db.getUser(etUserName.getText().toString()).getAge());
                     startActivity(intent);
                 }
                 else {
@@ -53,6 +56,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
                 Log.d("test", "click");
+                Log.d("age", db.getUser(etUserName.getText().toString()).getAge());
                 Log.d("db response",db.getUser(etUserName.getText().toString()).getPassword());
                 Log.d("db response",etPassword.getText().toString());
             }

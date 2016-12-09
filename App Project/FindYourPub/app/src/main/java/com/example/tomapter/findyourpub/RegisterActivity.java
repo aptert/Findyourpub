@@ -42,7 +42,7 @@ public class RegisterActivity extends AppCompatActivity {
             String aName = etName.getText().toString();
             String aPassword = etPassword.getText().toString();
             String anAge = etAge.getText().toString();
-            db.addUser(new User(aUserName,aName,aPassword));
+            db.addUser(new User(aUserName,aName,aPassword,anAge));
             Intent intent = new Intent(getBaseContext(), LoginActivity.class);
             startActivity(intent);
         /*}

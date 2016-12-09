@@ -13,18 +13,19 @@ public class User {
     private String age;
     private int id;
 
-    public User(int id, String userName, String name, String password){
+    public User(int id, String userName, String name, String password, String age){
+        this.userName = userName;
+        this.name=name;
+        this.password=password;
+        this.id = id;
+        this.age = age;
+    }
+
+    public User(String userName, String name, String password, String age){
         this.userName = userName;
         this.name=name;
         this.password=password;
         this.age = age;
-        this.id = id;
-    }
-
-    public User(String userName, String name, String password){
-        this.userName = userName;
-        this.name=name;
-        this.password=password;
     }
 
     public String getAge() {

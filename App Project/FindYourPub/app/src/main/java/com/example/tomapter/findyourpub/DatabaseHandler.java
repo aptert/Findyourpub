@@ -17,7 +17,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE userTable (colId, colName, colUsername, colPassword)");
+        db.execSQL("CREATE TABLE userTable (colId, colName, colUsername, colPassword, colAge)");
     }
 
     @Override
@@ -34,6 +34,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         contentValues.put("colName", user.getName());
         contentValues.put("colUserName", user.getUserName());
         contentValues.put("colPassword", user.getPassword());
+        contentValues.put("colAge", user.getAge());
 
         long result = sqLiteDatabase.insert("userTable", null, contentValues);
 
@@ -50,13 +51,13 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.query("userTable", new String[] { "ColId", "colUserName","colName",
-                "colPassword" }, "colUserName" + "=?",
+                "colPassword", "colAge" }, "colUserName" + "=?",
                 new String[] { String.valueOf(userName) }, null, null, null, null);
         if (cursor != null)
             cursor.moveToFirst();
 
         User user = new User(Integer.parseInt(cursor.getString(0)),
-                cursor.getString(1), cursor.getString(2),cursor.getString(3));
+                cursor.getString(1), cursor.getString(2),cursor.getString(3),cursor.getString(4));
         // return contact
         return user;
     }
@@ -65,7 +66,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.query("userTable", new String[] { "ColId", "colUserName","colName",
-                        "colPassword" }, "colUserName =?",
+                        "colPassword", "colAge" }, "colUserName =?",
                 new String[] { String.valueOf(userName) }, null, null, null, null);
 
         if (cursor != null){
@@ -75,5 +76,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             return false;
         }
 
+    }
+
+    public void deleteTable(){
+        SQLiteDatabase db = getReadableDatabase();
+        db.execSQL("DROPTABLE");
     }
 }

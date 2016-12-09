@@ -45,10 +45,11 @@ public class MainActivity extends AppCompatActivity {
     private TextView textview;
     private Button find_me;
     private Button go;
-    private double lat;
-    private double lon;
+    static public double lat;
+    static public double lon;
     private static String city;
     private RequestQueue requestQueue;
+    private Location mLastLocation;
 static public int xx;
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -69,6 +70,16 @@ static public int xx;
         textview = (TextView) findViewById(R.id.fieldCity);
         requestQueue = Volley.newRequestQueue(this);
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+        if(locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
+            mLastLocation = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+        }
+        else if(locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
+            mLastLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+
+        }
+        //Location tom = LocationServices.FusedLocationApi.getLastLocation(GoogleApiClient mGoogleApiClient);
+        lon = mLastLocation.getLongitude();
+        lat = mLastLocation.getLatitude();
         locationListener = new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
@@ -76,9 +87,8 @@ static public int xx;
                 textview.append("lat: " + location.getLatitude() + " long: " + location.getLongitude());*/
                 lon = location.getLongitude();
                 lat = location.getLatitude();
-                Intent intent = new Intent(getBaseContext(), DirectionActivity.class);
-                intent.putExtra("lat", lat);
-                intent.putExtra("lon", lon);
+
+
             }
 
             @Override
@@ -97,6 +107,14 @@ static public int xx;
                 startActivity(intent);
             }
         };
+
+        //passing the data to PubListActivity using bundle because of double values
+
+        Bundle bundle = new Bundle();
+        Intent intent = new Intent(getBaseContext(), PubListActivity.class);
+        bundle.putDouble("lat", lat);
+        bundle.putDouble("lon", lon);
+        intent.putExtras(bundle);
 
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.INTERNET}, 10);
@@ -190,24 +208,4 @@ static public int xx;
         return city;
     }
 
-    /*@Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-
-        GPSTracker gpsTracker = new GPSTracker(this);
-        if (gpsTracker.getIsGPSTrackingEnabled())
-        {
-            String stringLatitude = String.valueOf(gpsTracker.latitude);
-            textview = (TextView)findViewById(R.id.fieldCity);
-            textview.setText(stringLatitude);
-            Toast.makeText(this, stringLatitude,Toast.LENGTH_LONG).show();
-
-        }
-        else
-        {
-            // can't get location
-            // GPS or Network is not enabled
-            // Ask user to enable GPS/network in settings
-            gpsTracker.showSettingsAlert();
-        }
-    }*/
 }
