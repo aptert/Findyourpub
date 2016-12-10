@@ -35,12 +35,6 @@
     </android.support.design.widget.AppBarLayout>
 
 
-    <android.support.v4.widget.NestedScrollView
-        android:id="@+id/pub_detail_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/direction"
         android:layout_width="wrap_content"
@@ -50,5 +44,21 @@
         app:layout_anchor="@+id/pub_detail_container"
         app:layout_anchorGravity="top|end"
         app:srcCompat="@drawable/ic_directions_white_24dp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|start"
+        app:layout_anchor="@+id/pub_detail_container"
+        android:layout_marginRight="@dimen/phone_button_margin"
+        app:layout_anchorGravity="top|end"
+        app:srcCompat="@drawable/ic_phone_white_24dp"/>
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/pub_detail_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
 </android.support.design.widget.CoordinatorLayout>

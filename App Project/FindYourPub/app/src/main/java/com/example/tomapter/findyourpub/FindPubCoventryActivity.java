@@ -105,8 +105,8 @@ public class FindPubCoventryActivity extends AppCompatActivity implements
         ivyHouse.title("Ivy House").snippet("44 Jordans close, Coventry CV1 5RW, UK");
         MarkerOptions aint_nothin = new MarkerOptions().position(new LatLng(51.512965, -0.139525));
         aint_nothin.title("Ain't nothing but...").snippet("20 Kingly St, Carnaby, London W1B 5PZ");
-        MarkerOptions albany = new MarkerOptions().position(new LatLng(52.402970, -1.526782));
-        albany.title("The Albany").snippet("24 Albany Rd, Coventry CV5 6JU");
+        MarkerOptions albany = new MarkerOptions().position(new LatLng(51.523372, -0.143930));
+        albany.title("The Albany").snippet("240 Great Portland St, Paddington, London W1W 5QU");
         MarkerOptions boston = new MarkerOptions().position(new LatLng(51.514697, -0.131257));
         boston.title("68 & Boston").snippet("5 Greek St, Soho, London W1D 4DD");
         MarkerOptions apeandbird = new MarkerOptions().position(new LatLng(51.513383, -0.128761));

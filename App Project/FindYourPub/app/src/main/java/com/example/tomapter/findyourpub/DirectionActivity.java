@@ -60,11 +60,11 @@ public class DirectionActivity extends FragmentActivity implements OnMapReadyCal
         lon = getIntent().getDoubleExtra("lon", lon);
 
 
-        final JsonObjectRequest request = new JsonObjectRequest("https://maps.googleapis.com/maps/api/directions/json?origin=Toronto&destination=Montreal&key=AIzaSyD_GD_J3t7xqw1NB1LWKpPYdeKHUxTQZI8", new Response.Listener<JSONObject>() {
+        final JsonObjectRequest request = new JsonObjectRequest("https://maps.googleapis.com/maps/api/directions/json?origin=Boston,MA&destination=Concord,MA&waypoints=Charlestown,MA|Lexington,MA&key=AIzaSyD_GD_J3t7xqw1NB1LWKpPYdeKHUxTQZI8", new Response.Listener<JSONObject>() {
 
             @Override
             public void onResponse(JSONObject response) {
-                Log.d("request", "request got a response!");
+                Log.d("request", "request got a response for direction activity!");
 
                 String address = null;
                 try {

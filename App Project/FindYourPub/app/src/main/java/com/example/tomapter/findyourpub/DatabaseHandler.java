@@ -36,6 +36,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         contentValues.put("colPassword", user.getPassword());
         contentValues.put("colAge", user.getAge());
 
+
+
         long result = sqLiteDatabase.insert("userTable", null, contentValues);
 
         if (result > 0) {

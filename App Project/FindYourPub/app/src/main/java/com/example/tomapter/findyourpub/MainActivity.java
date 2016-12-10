@@ -77,7 +77,7 @@ static public int xx;
             mLastLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 
         }
-        //Location tom = LocationServices.FusedLocationApi.getLastLocation(GoogleApiClient mGoogleApiClient);
+
         lon = mLastLocation.getLongitude();
         lat = mLastLocation.getLatitude();
         locationListener = new LocationListener() {
