@@ -36,22 +36,12 @@
 
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/direction"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical|start"
-        android:layout_margin="@dimen/fab_margin"
-        app:layout_anchor="@+id/pub_detail_container"
-        app:layout_anchorGravity="top|end"
-        app:srcCompat="@drawable/ic_directions_white_24dp" />
-
-    <android.support.design.widget.FloatingActionButton
         android:id="@+id/phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|start"
         app:layout_anchor="@+id/pub_detail_container"
-        android:layout_marginRight="@dimen/phone_button_margin"
+        android:layout_marginRight="@dimen/fab_margin"
         app:layout_anchorGravity="top|end"
         app:srcCompat="@drawable/ic_phone_white_24dp"/>
 

@@ -17,7 +17,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE userTable (colId, colName, colUsername, colPassword, colAge)");
+        db.execSQL("CREATE TABLE userTable (colId, colName, colUsername, colPassword)");
     }
 
     @Override
@@ -34,7 +34,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         contentValues.put("colName", user.getName());
         contentValues.put("colUserName", user.getUserName());
         contentValues.put("colPassword", user.getPassword());
-        contentValues.put("colAge", user.getAge());
 
 
 
@@ -53,7 +52,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.query("userTable", new String[] { "ColId", "colUserName","colName",
-                "colPassword", "colAge" }, "colUserName" + "=?",
+                "colPassword" }, "colUserName" + "=?",
                 new String[] { String.valueOf(userName) }, null, null, null, null);
         if (cursor != null)
             cursor.moveToFirst();
@@ -68,7 +67,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.query("userTable", new String[] { "ColId", "colUserName","colName",
-                        "colPassword", "colAge" }, "colUserName =?",
+                        "colPassword" }, "colUserName =?",
                 new String[] { String.valueOf(userName) }, null, null, null, null);
 
         if (cursor != null){

@@ -53,5 +53,7 @@
         android:textIsSelectable="true"
         tools:context="com.example.tomapter.findyourpub.PubDetailFragment" />
 
+
+
 </LinearLayout>
 

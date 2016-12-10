@@ -1,5 +1,7 @@
 package com.example.tomapter.findyourpub;
 
+import android.*;
+import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -15,6 +17,9 @@ import android.support.v7.app.ActionBar;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.TextView;
+
+import com.example.tomapter.findyourpub.content.PubContent;
 
 /**
  * An activity representing a single Pub detail screen. This
@@ -29,18 +34,14 @@ public class PubDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pub_detail);
 
+        ActivityCompat.requestPermissions(PubDetailActivity.this,
+                new String[]{Manifest.permission.CALL_PHONE},
+                1);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.detail_toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.direction);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(PubDetailActivity.this, DirectionActivity.class);
-                startActivity(intent);
-            }
-        });
+
 
         FloatingActionButton bPhone = (FloatingActionButton) findViewById(R.id.phone);
         bPhone.setOnClickListener(new View.OnClickListener() {
@@ -48,10 +49,9 @@ public class PubDetailActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Log.d("I'm calling", "yes");
                 Intent callIntent = new Intent(Intent.ACTION_CALL);
-                callIntent.setData(Uri.parse("tel:+3363561513"));
-                if (ActivityCompat.checkSelfPermission(getBaseContext(), android.Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-
-                    startActivity(callIntent);
+                callIntent.setData(Uri.parse("tel:02476 520387"));
+                if (ActivityCompat.checkSelfPermission(getBaseContext() ,android.Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                    Log.d("I'm calling", "no");
                     return;
                 }
                 startActivity(callIntent);

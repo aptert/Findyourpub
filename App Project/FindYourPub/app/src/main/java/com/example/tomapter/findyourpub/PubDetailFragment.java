@@ -1,10 +1,16 @@
 package com.example.tomapter.findyourpub;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v7.graphics.drawable.DrawableWrapper;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,6 +73,7 @@ public class PubDetailFragment extends Fragment {
             ((TextView) rootView.findViewById(R.id.address)).setText(mItem.address);
             ((TextView) rootView.findViewById(R.id.name)).setText(mItem.name);
             ((ImageView) rootView.findViewById(R.id.logo)).setImageResource(mItem.logo);
+
         }
 
         return rootView;
