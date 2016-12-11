@@ -35,7 +35,7 @@ public class PubDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pub_detail);
 
         ActivityCompat.requestPermissions(PubDetailActivity.this,
-                new String[]{Manifest.permission.CALL_PHONE},
+                new String[]{android.Manifest.permission.CALL_PHONE},
                 1);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.detail_toolbar);

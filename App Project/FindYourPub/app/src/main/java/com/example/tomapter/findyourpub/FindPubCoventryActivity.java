@@ -77,7 +77,9 @@ public class FindPubCoventryActivity extends AppCompatActivity implements
         lat = bundle.getDouble("lat");
         lon = bundle.getDouble("lon");*/
         lat = MainActivity.lat;
-        lon = MainActivity.lon; //try to change the way to do this
+        lon = MainActivity.lon;
+
+        //try to change the way to do this with getter
 
 
         SupportMapFragment mapFragment =
@@ -113,6 +115,8 @@ public class FindPubCoventryActivity extends AppCompatActivity implements
         apeandbird.title("Ape & Bird").snippet("142 Shaftesbury Ave, Soho");
         MarkerOptions termini = new MarkerOptions().position(new LatLng(51.513677, -0.129790));
         termini.title("Bar Termini").snippet("7 Old Compton St, Soho");
+        MarkerOptions chameleon = new MarkerOptions().position(new LatLng(52.479049,-1.903051));
+        chameleon.title("The Chameleon").snippet("1 Victoria Square, Hill St, Birmingham B1 1BD");
         mMap.addMarker(phoenix);
         mMap.addMarker(quidsinn);
         mMap.addMarker(castleGround);
@@ -124,7 +128,7 @@ public class FindPubCoventryActivity extends AppCompatActivity implements
         mMap.addMarker(boston);
         mMap.addMarker(apeandbird);
         mMap.addMarker(termini);
-
+        mMap.addMarker(chameleon);
 
         mMap.setOnMyLocationButtonClickListener(this);
         enableMyLocation();

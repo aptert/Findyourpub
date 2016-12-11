@@ -70,9 +70,8 @@ public class PubDetailFragment extends Fragment {
 
         // Show the dummy content as text in a TextView.
         if (mItem != null) {
-            ((TextView) rootView.findViewById(R.id.tel)).setText(mItem.tel);
             ((TextView) rootView.findViewById(R.id.address)).setText(mItem.address);
-            ((TextView) rootView.findViewById(R.id.name)).setText(mItem.name);
+            ((TextView) rootView.findViewById(R.id.description)).setText(mItem.description);
             ((ImageView) rootView.findViewById(R.id.logo)).setImageResource(mItem.logo);
             tel = mItem.tel;
         }

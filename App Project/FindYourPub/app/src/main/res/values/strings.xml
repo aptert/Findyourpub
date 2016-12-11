@@ -41,5 +41,14 @@
 
     <string name="dialog_title">ERROR</string>
     <string name="title_activity_maps">Map</string>
-
+    <string name="phoenix_description">The Phoenix Pub is a really nice place to hang out with some friends while enjoying a beer. It\'s also a good place to watch football matches of the Barclays Premier League or the Champions League</string>
+    <string name="quidsinn_description">The Quid\'s  Inn is the pub where you\'ll find the cheapest pint in Coventry CV1. There is a big smoking areas with warms outside seats and you can play pool and foosball with your friends</string>
+    <string name="lasiguanas_description">In Las Iguanas you eat or enjoy a wonderful cocktails with your friends. It is located in the real center of Coventry</string>
+    <string name="castleground_description">Castle Ground is wonderful place with a big reception downstairs and some private rooms upstairs to stay with your friends. On match days, they pull off a giant screen to display the games</string>
+    <string name="establishment_description">The Establishment is located in a very nice neighbourhood near Coventry\'s Cathedral. They also displays matches and it is a beautiful place</string>
+    <!--<string name="quidsinn_description"></string>
+    <string name="quidsinn_description"></string>
+    <string name="quidsinn_description"></string>
+    <string name="quidsinn_description"></string>
+    <string name="quidsinn_description"></string>-->
 </resources>
