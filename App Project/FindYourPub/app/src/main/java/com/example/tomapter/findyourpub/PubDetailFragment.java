@@ -31,6 +31,7 @@ public class PubDetailFragment extends Fragment {
      * represents.
      */
     public static final String ARG_ITEM_ID = "item_id";
+    public static String tel;
 
     /**
      * The dummy content this fragment is presenting.
@@ -73,7 +74,7 @@ public class PubDetailFragment extends Fragment {
             ((TextView) rootView.findViewById(R.id.address)).setText(mItem.address);
             ((TextView) rootView.findViewById(R.id.name)).setText(mItem.name);
             ((ImageView) rootView.findViewById(R.id.logo)).setImageResource(mItem.logo);
-
+            tel = mItem.tel;
         }
 
         return rootView;

@@ -49,7 +49,7 @@ public class PubDetailActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Log.d("I'm calling", "yes");
                 Intent callIntent = new Intent(Intent.ACTION_CALL);
-                callIntent.setData(Uri.parse("tel:02476 520387"));
+                callIntent.setData(Uri.parse("tel:"+PubDetailFragment.tel));
                 if (ActivityCompat.checkSelfPermission(getBaseContext() ,android.Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                     Log.d("I'm calling", "no");
                     return;

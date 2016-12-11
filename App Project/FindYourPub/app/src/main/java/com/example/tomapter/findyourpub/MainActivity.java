@@ -70,7 +70,7 @@ static public int xx;
         textview = (TextView) findViewById(R.id.fieldCity);
         requestQueue = Volley.newRequestQueue(this);
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-        if(locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
+        /*if(locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
             mLastLocation = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
         }
         else if(locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
@@ -79,7 +79,7 @@ static public int xx;
         }
 
         lon = mLastLocation.getLongitude();
-        lat = mLastLocation.getLatitude();
+        lat = mLastLocation.getLatitude();*/
         locationListener = new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
