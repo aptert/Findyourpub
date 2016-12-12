@@ -72,14 +72,9 @@ public class FindPubCoventryActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_pub);
 
-        //Getting de location back from the main activity
-        /*Bundle bundle = getIntent().getExtras();
-        lat = bundle.getDouble("lat");
-        lon = bundle.getDouble("lon");*/
         lat = MainActivity.lat;
         lon = MainActivity.lon;
 
-        //try to change the way to do this with getter
 
 
         SupportMapFragment mapFragment =

@@ -19,6 +19,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -57,7 +58,7 @@ static public int xx;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final TextView loginLink= (TextView) findViewById(R.id.loginLink);
+        final ImageView loginLink= (ImageView) findViewById(R.id.loginLink);
         loginLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,7 +71,7 @@ static public int xx;
         textview = (TextView) findViewById(R.id.fieldCity);
         requestQueue = Volley.newRequestQueue(this);
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-        if(locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
+        /*if(locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) { //Uncomment this block to make it work on real device
             mLastLocation = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
         }
         else if(locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
@@ -79,12 +80,10 @@ static public int xx;
         }
 
         lon = mLastLocation.getLongitude();
-        lat = mLastLocation.getLatitude();
+        lat = mLastLocation.getLatitude();*/ //Till there
         locationListener = new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
-                /*textview.setText(" ");
-                textview.append("lat: " + location.getLatitude() + " long: " + location.getLongitude());*/
                 lon = location.getLongitude();
                 lat = location.getLatitude();
 
@@ -207,6 +206,5 @@ static public int xx;
     public static String getCity() {
         return city;
     }
-
 
 }

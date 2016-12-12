@@ -20,22 +20,23 @@
         <!--android:background="@color/colorBackground"-->
 
 
-        <TextView
-            android:layout_width="match_parent"
+        <ImageView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Login/Register"
             android:textStyle="italic"
+            app:srcCompat="@drawable/ic_account_box_black_24dp"
             android:layout_marginTop="@dimen/fab_margin"
+            android:layout_marginBottom="@dimen/margin_account"
             android:id="@+id/loginLink"
             android:gravity="end"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/fab_margin"
             android:text="@string/app_name"
             android:gravity="center"
-            android:textSize="30sp"/>
+            android:textSize="@dimen/main_title"/>
 
 
         <ImageView
@@ -43,8 +44,8 @@
             android:layout_height="wrap_content"
             android:contentDescription="Biere"
             app:srcCompat="@drawable/beer_yellow"
-            android:layout_marginTop="50dp"
-            android:layout_marginBottom="50dp"
+            android:layout_marginTop="@dimen/beer_logo_margin"
+            android:layout_marginBottom="@dimen/beer_logo_margin"
             android:id="@+id/imageView" />
 
 
@@ -53,7 +54,7 @@
             android:id="@+id/fieldCity"
             android:layout_height="wrap_content"
             android:hint="Your current location here"
-            android:textSize="20sp"
+            android:textSize="@dimen/sub_title"
             android:gravity="center"/>
 
 

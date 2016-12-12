@@ -47,11 +47,11 @@ public class PubContent {
                 addItem(new PubItem("5", "The Establishment","+44 20 7387 0221", "THE OLD COUNTY HALL BAYLEY LANE, Coventry CV1 5RN",R.drawable.establishment, "The Establishment is located in a very nice neighbourhood near Coventry\'s Cathedral. They also displays matches and it is a beautiful place"));
                 break;
             case ("London"):
-                /*addItem(new PubItem("1", "Ain't Nothin But...","+44 20 7287 0514", "20 Kingly Street, Soho, W1B 5PZ",R.drawable.aint_nothing));
-                addItem(new PubItem("2", "The Albany","+44 24 7622 2727", "240 Great Portland St, Paddington, London W1W 5QU",R.drawable.albany ));
-                addItem(new PubItem("3", "68 & Boston"," +44 20 7287 3713", "5 Greek St, Soho, London W1D 4DD",R.drawable.boston));
-                addItem(new PubItem("4", "Ape & Bird","+44 20 7836 3119", "142 Shaftesbury Ave, Soho, London WC2H 8HJ",R.drawable.apebird));
-                addItem(new PubItem("5", "Bar Termini","+44 7860 945018", "7 Old Compton St, Soho, London W1D 5JE",R.drawable.termini));*/
+                addItem(new PubItem("1", "Ain't Nothin But...","+44 20 7287 0514", "20 Kingly Street, Soho, W1B 5PZ",R.drawable.aint_nothing,"The Ain't nothing but... pub is the place in london to hear go blues and rock music. It's always crowded with blues lover and the atmosphere is really good. Ther is always live music"));
+                addItem(new PubItem("2", "The Albany","+44 24 7622 2727", "240 Great Portland St, Paddington, London W1W 5QU",R.drawable.albany,"" ));
+                addItem(new PubItem("3", "68 & Boston"," +44 20 7287 3713", "5 Greek St, Soho, London W1D 4DD",R.drawable.boston,""));
+                addItem(new PubItem("4", "Ape & Bird","+44 20 7836 3119", "142 Shaftesbury Ave, Soho, London WC2H 8HJ",R.drawable.apebird,""));
+                addItem(new PubItem("5", "Bar Termini","+44 7860 945018", "7 Old Compton St, Soho, London W1D 5JE",R.drawable.termini,""));
                 break;
             case ("Birmingham"):
                 addItem(new PubItem("1", "The Chameleon", "+44 121 643 2233","1 Victoria Square, Hill St, Birmingham B1 1BD",R.drawable.chameleon,"The Chameleon is a really nice bar chere you can enjoy cocktails with friends near the Christmas Frankfurt Market"));

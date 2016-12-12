@@ -58,26 +58,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             cursor.moveToFirst();
 
         User user = new User(Integer.parseInt(cursor.getString(0)),
-                cursor.getString(1), cursor.getString(2),cursor.getString(3),cursor.getString(4));
+                cursor.getString(1), cursor.getString(2),cursor.getString(3));
         // return contact
         return user;
     }
 
-    public boolean containsUserName(String userName){
-        SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor cursor = db.query("userTable", new String[] { "ColId", "colUserName","colName",
-                        "colPassword" }, "colUserName =?",
-                new String[] { String.valueOf(userName) }, null, null, null, null);
-
-        if (cursor != null){
-            return true;
-        }
-        else{
-            return false;
-        }
-
-    }
 
     public void deleteTable(){
         SQLiteDatabase db = getReadableDatabase();

@@ -56,7 +56,6 @@ public class LoginActivity extends AppCompatActivity {
 
 
                 Log.d("test", "click");
-                Log.d("age", db.getUser(etUserName.getText().toString()).getAge());
                 Log.d("db response",db.getUser(etUserName.getText().toString()).getPassword());
                 Log.d("db response",etPassword.getText().toString());
             }
