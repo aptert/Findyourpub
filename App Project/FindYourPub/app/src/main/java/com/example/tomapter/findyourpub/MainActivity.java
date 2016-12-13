@@ -71,7 +71,7 @@ static public int xx;
         textview = (TextView) findViewById(R.id.fieldCity);
         requestQueue = Volley.newRequestQueue(this);
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-        /*if(locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) { //Uncomment this block to make it work on real device
+        if(locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) { //Uncomment this block to make it work on real device
             mLastLocation = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
         }
         else if(locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
@@ -80,7 +80,7 @@ static public int xx;
         }
 
         lon = mLastLocation.getLongitude();
-        lat = mLastLocation.getLatitude();*/ //Till there
+        lat = mLastLocation.getLatitude(); //Till there
         locationListener = new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
@@ -106,6 +106,7 @@ static public int xx;
                 startActivity(intent);
             }
         };
+
 
         //passing the data to PubListActivity using bundle because of double values
 

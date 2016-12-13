@@ -130,7 +130,7 @@ public class FindPubCoventryActivity extends AppCompatActivity implements
         CameraUpdate center=
                 CameraUpdateFactory.newLatLng(new LatLng(lat,
                         lon));
-        CameraUpdate zoom=CameraUpdateFactory.zoomTo(15);
+        CameraUpdate zoom=CameraUpdateFactory.zoomTo(13);
 
         map.moveCamera(center);
         map.animateCamera(zoom);
